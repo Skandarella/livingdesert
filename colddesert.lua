@@ -1,3 +1,8 @@
+
+local modname = "livingdesert"
+local modpath = minetest.get_modpath(modname)
+local mg_name = minetest.get_mapgen_setting("mg_name")
+
 	minetest.register_decoration({
 		deco_type = "simple",
 		place_on = {"default:silver_sand"},
