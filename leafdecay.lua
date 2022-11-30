@@ -16,3 +16,15 @@ default.register_leafdecay({
 	leaves = {"livingdesert:figcactus_flower", "livingdesert:figcactus_fruit"},
 	radius = 3
 })
+
+default.register_leafdecay({
+	trunks = {"livingdesert:saxaul_trunk"},
+	leaves = {"livingdesert:saxaul_leaves"},
+	radius = 3
+})
+
+default.register_leafdecay({
+	trunks = {"livingdesert:pine_trunk"},
+	leaves = {"livingdesert:pine_leaves", "livingdesert:pine_leaves2", "livingdesert:pine_leaves3"},
+	radius = 3
+})
