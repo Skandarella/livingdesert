@@ -1,4 +1,6 @@
 default
+stairs
+doors
 mobs?
 animalworld?
 hunger_ng?

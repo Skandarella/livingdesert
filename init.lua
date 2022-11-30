@@ -33,6 +33,8 @@ local S = minetest.get_translator and minetest.get_translator("livingdesert") or
 -- plants
 dofile(path .. "desertplants.lua") -- 
 dofile(path .. "leafdecay.lua") -- 
+dofile(path .. "colddesert.lua") -- 
+dofile(path .. "yurts.lua") -- 
 dofile(path .. "hunger.lua") -- 
 
 

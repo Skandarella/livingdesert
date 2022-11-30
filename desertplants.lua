@@ -705,7 +705,7 @@ minetest.register_node("livingdesert:yucca", {
 	minetest.register_decoration({
 		name = "livingdesert:yucca",
 		deco_type = "simple",
-                place_on = {"default:sand", "default:desert_sand", "default:silver_sand"},
+                place_on = {"default:sand", "default:desert_sand"},
 		sidelen = 16,
 		noise_params = {
 			offset = 0,
