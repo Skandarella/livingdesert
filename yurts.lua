@@ -1,7 +1,9 @@
+local S = minetest.get_translator("livingdesert")
+
 -- Yurt Building Parts
 
 minetest.register_node("livingdesert:yurt_outside", {
-	description = ("Yurt lower outside part"),
+	description = S("Yurt lower outside part"),
 	tiles = {
 		"livingdesert_yurt_outside.png",
 		"livingdesert_yurt_outside.png",
@@ -15,7 +17,7 @@ groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3,
 })
 
 minetest.register_node("livingdesert:yurt_outsidesecond", {
-	description = ("Yurt second lower outside part"),
+	description = S("Yurt second lower outside part"),
 	tiles = {
 		"livingdesert_yurt_outside_top.png",
 		"livingdesert_yurt_outside_top.png",
@@ -29,7 +31,7 @@ groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3,
 })
 
 minetest.register_node("livingdesert:yurt_outside2", {
-	description = ("Yurt upper outside part"),
+	description = S("Yurt upper outside part"),
 	tiles = {
 		"livingdesert_yurt_outside2_top.png",
 		"livingdesert_yurt_outside2_top.png",
@@ -43,7 +45,7 @@ groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3,
 })
 
 minetest.register_node("livingdesert:yurt_inside", {
-	description = ("Yurt lower inside part"),
+	description = S("Yurt lower inside part"),
 	tiles = {"livingdesert_yurt_inside.png"},
 	is_ground_content = false,
 	groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
@@ -51,7 +53,7 @@ minetest.register_node("livingdesert:yurt_inside", {
 })
 
 minetest.register_node("livingdesert:yurt_inside2", {
-	description = ("Yurt upper inside part"),
+	description = S("Yurt upper inside part"),
 	tiles = {"livingdesert_yurt_inside2.png"},
 	is_ground_content = false,
 	groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},

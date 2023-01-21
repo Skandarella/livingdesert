@@ -1,3 +1,4 @@
+local S = minetest.get_translator("livingdesert")
 
 local modname = "livingdesert"
 local modpath = minetest.get_modpath(modname)
@@ -21,7 +22,7 @@ end
 
 -- datepalm trunk
 minetest.register_node("livingdesert:date_palm_trunk", {
-	description = ("Date Palm Trunk"),
+	description = S("Date Palm Trunk"),
 	tiles = {
 		"livingdesert_date_palm_trunk_top.png",
 		"livingdesert_date_palm_trunk_top.png",
@@ -34,7 +35,7 @@ minetest.register_node("livingdesert:date_palm_trunk", {
 })
 
 minetest.register_node("livingdesert:date_palm_leaves", {
-  description = ("Date Palm Leaves"),
+  description = S("Date Palm Leaves"),
   drawtype = "plantlike",
   waving = 1,
   visual_scale = 4.0,
@@ -42,14 +43,14 @@ minetest.register_node("livingdesert:date_palm_leaves", {
   special_tiles = {"livingdesert_date_palm_leaves.png"},
   paramtype = "light",
   is_ground_content = false,
-  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1, winleafdecay = 3},
   drop = {
     max_items = 1,
     items = {
       {
-        -- player will get sapling with 1/50 chance
+        -- player will get sapling with 1/25 chance
         items = {'livingdesert:date_palm_sapling'},
-        rarity = 50,
+        rarity = 3,
       },
       {
         -- player will get leaves only if he get no saplings,
@@ -64,7 +65,7 @@ minetest.register_node("livingdesert:date_palm_leaves", {
 })
 
 minetest.register_node("livingdesert:date_palm_sapling", {
-  description = ("Date Palm Sapling"),
+  description = S("Date Palm Sapling"),
   drawtype = "plantlike",
   tiles = {"livingdesert_date_palm_sapling.png"},
   inventory_image = "livingdesert_date_palm_sapling.png",
@@ -100,7 +101,7 @@ minetest.register_node("livingdesert:date_palm_sapling", {
 
 -- date_palm wood
 minetest.register_node("livingdesert:date_palm_wood", {
-	description = ("Date Palm Wood"),
+	description = S("Date Palm Wood"),
 	tiles = {"livingdesert_date_palm_wood.png"},
 	is_ground_content = false,
 	groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
@@ -117,8 +118,8 @@ minetest.register_craft({
       "livingdesert:date_palm_wood",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingdesert_date_palm_wood.png"},
-      ("Date Palm Stair"),
-      ("Date Palm Slab"),
+      S("Date Palm Stair"),
+      S("Date Palm Slab"),
       default.node_sound_wood_defaults()
     )
 
@@ -127,15 +128,15 @@ minetest.register_craft({
       "livingdesert:date_palm_trunk",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingdesert_date_palm_trunk_top.png", "livingdesert_date_palm_trunk_top.png", "livingdesert_date_palm_trunk.png"},
-      ("Date Palm Trunk Stair"),
-      ("Date Palm Trunk Slab"),
+      S("Date Palm Trunk Stair"),
+      S("Date Palm Trunk Slab"),
       default.node_sound_wood_defaults()
     )
 
   doors.register_fencegate(
     "livingdesert:gate_date_palm_wood",
     {
-      description = ("Date Palm Wood Fence Gate"),
+      description = S("Date Palm Wood Fence Gate"),
       texture = "livingdesert_date_palm_wood.png",
       material = "livingdesert:date_palm_wood",
       groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
@@ -147,7 +148,7 @@ minetest.register_craft({
 default.register_fence(
   "livingdesert:fence_date_palm_wood",
   {
-    description = ("Date Palm Fence"),
+    description = S("Date Palm Fence"),
     texture = "livingdesert_date_palm_fence_wood.png",
     inventory_image = "default_fence_overlay.png^livingdesert_date_palm_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
     wield_image = "default_fence_overlay.png^livingdesert_date_palm_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
@@ -160,7 +161,7 @@ default.register_fence(
 default.register_fence_rail(
   "livingdesert:fence_rail_date_palm_wood",
   {
-    description = ("Date Palm Fence Rail"),
+    description = S("Date Palm Fence Rail"),
     texture = "livingdesert_date_palm_fence_wood.png",
     inventory_image = "default_fence_rail_overlay.png^livingdesert_date_palm_wood.png^" ..
       "default_fence_rail_overlay.png^[makealpha:255,126,126",
@@ -220,7 +221,7 @@ minetest.register_decoration({
 
 -- date fruits
 minetest.register_node("livingdesert:date_palm_fruits", {
-	description = ("Date Palm Fruits"),
+	description = S("Date Palm Fruits"),
 	drawtype = "plantlike",
 	tiles = {"livingdesert_date_palm_fruits.png"},
 	inventory_image = "livingdesert_date_palm_fruits.png",
@@ -232,7 +233,7 @@ minetest.register_node("livingdesert:date_palm_fruits", {
 		type = "fixed",
 		fixed = {-0.31, -0.5, -0.31, 0.31, 0.5, 0.31}
 	},
-	groups = {food = 1, flammable = 2, fleshy = 3, dig_immediate = 3, leafdecay = 1, leafdecay_drop = 1},
+	groups = {food = 1, flammable = 2, fleshy = 3, dig_immediate = 3, leafdecay = 1, leafdecay_drop = 1, winleafdecay_drop = 1, winleafdecay = 3},
         drop = "livingdesert:date_palm_fruits",
 	on_use = minetest.item_eat(6),
 	sounds = default.node_sound_leaves_defaults(),
@@ -261,7 +262,7 @@ end
 
 -- euphorbia trunk
 minetest.register_node("livingdesert:euphorbia_trunk", {
-	description = ("Euphorbia Trunk"),
+	description = S("Euphorbia Trunk"),
 	tiles = {
 		"livingdesert_euphorbia_trunk.png",
 		"livingdesert_euphorbia_trunk.png",
@@ -274,7 +275,7 @@ minetest.register_node("livingdesert:euphorbia_trunk", {
 })
 
 minetest.register_node("livingdesert:euphorbia_leaves", {
-  description = ("Euphorbia Leaves"),
+  description = S("Euphorbia Leaves"),
   drawtype = "plantlike",
   waving = 1,
   visual_scale = 2.0,
@@ -282,14 +283,14 @@ minetest.register_node("livingdesert:euphorbia_leaves", {
   special_tiles = {"livingdesert_euphorbia_leaves.png"},
   paramtype = "light",
   is_ground_content = false,
-  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1, winleafdecay = 3},
   drop = {
     max_items = 1,
     items = {
       {
         -- player will get sapling with 1/50 chance
         items = {'livingdesert:euphorbia_sapling'},
-        rarity = 50,
+        rarity = 2,
       },
       {
         -- player will get leaves only if he get no saplings,
@@ -304,7 +305,7 @@ minetest.register_node("livingdesert:euphorbia_leaves", {
 })
 
 minetest.register_node("livingdesert:euphorbia_sapling", {
-  description = ("Euphorbia Sapling"),
+  description = S("Euphorbia Sapling"),
   drawtype = "plantlike",
   tiles = {"livingdesert_euphorbia_sapling.png"},
   inventory_image = "livingdesert_euphorbia_sapling.png",
@@ -422,7 +423,7 @@ end
 
 -- figcactus trunk
 minetest.register_node("livingdesert:figcactus_trunk", {
-	description = ("Figcactus Trunk"),
+	description = S("Figcactus Trunk"),
 	tiles = {
 		"livingdesert_figcactus.png",
 		"livingdesert_figcactus.png",
@@ -435,7 +436,7 @@ minetest.register_node("livingdesert:figcactus_trunk", {
 })
 
 minetest.register_node("livingdesert:figcactus_flower", {
-  description = ("Figcactus Leaves"),
+  description = S("Figcactus Leaves"),
   drawtype = "plantlike",
   waving = 1,
   visual_scale = 1.0,
@@ -443,14 +444,14 @@ minetest.register_node("livingdesert:figcactus_flower", {
   special_tiles = {"livingdesert_figcactus_flower.png"},
   paramtype = "light",
   is_ground_content = false,
-  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1, winleafdecay = 3},
   drop = {
     max_items = 1,
     items = {
       {
-        -- player will get sapling with 1/50 chance
+        -- player will get sapling with 1/25 chance
         items = {'livingdesert:figcactus_sapling'},
-        rarity = 50,
+        rarity = 2,
       },
       {
         -- player will get leaves only if he get no saplings,
@@ -465,7 +466,7 @@ minetest.register_node("livingdesert:figcactus_flower", {
 })
 
 minetest.register_node("livingdesert:figcactus_sapling", {
-  description = ("Figcactus Sapling"),
+  description = S("Figcactus Sapling"),
   drawtype = "plantlike",
   tiles = {"livingdesert_figcactus_sapling.png"},
   inventory_image = "livingdesert_figcactus_sapling.png",
@@ -657,7 +658,7 @@ minetest.register_decoration({
 
 -- figcactus fruits
 minetest.register_node("livingdesert:figcactus_fruit", {
-	description = ("Figcactus Fruit"),
+	description = S("Figcactus Fruit"),
 	drawtype = "plantlike",
 	tiles = {"livingdesert_figcactus_fruit.png"},
 	inventory_image = "livingdesert_figcactus_fruit.png",
@@ -669,7 +670,7 @@ minetest.register_node("livingdesert:figcactus_fruit", {
 		type = "fixed",
 		fixed = {-0.31, -0.5, -0.31, 0.31, 0.5, 0.31}
 	},
-	groups = {food = 1, flammable = 2, fleshy = 3, dig_immediate = 3, leafdecay = 1, leafdecay_drop = 1},
+	groups = {food = 1, flammable = 2, fleshy = 3, dig_immediate = 3, leafdecay = 1, leafdecay_drop = 1, winleafdecay_drop = 1, winleafdecay = 3},
         drop = "livingdesert:figcactus_fruit",
 	on_use = minetest.item_eat(6),
 	sounds = default.node_sound_leaves_defaults(),
@@ -681,7 +682,7 @@ minetest.register_node("livingdesert:figcactus_fruit", {
 })
 
 minetest.register_node("livingdesert:yucca", {
-	description = ("Yucca palm"),
+	description = S("Yucca palm"),
 	drawtype = "plantlike",
 	waving = 1,
 	visual_scale = 2.0,
@@ -781,7 +782,7 @@ minetest.register_node("livingdesert:succulent", {
 	})
 
 minetest.register_node("livingdesert:succulent2", {
-	    description = "Succulent",
+	    description = S"Succulent",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 1.0,
@@ -821,7 +822,7 @@ minetest.register_node("livingdesert:succulent2", {
 	})
 
 minetest.register_node("livingdesert:succulent3", {
-	    description = "Succulent",
+	    description = S"Succulent",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 1.0,
@@ -860,7 +861,7 @@ minetest.register_node("livingdesert:succulent3", {
 	})
 
 minetest.register_node("livingdesert:succulent4", {
-	    description = "Lithops",
+	    description = S"Lithops",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 1.0,
@@ -899,7 +900,7 @@ minetest.register_node("livingdesert:succulent4", {
 	})
 
 minetest.register_node("livingdesert:succulent5", {
-	    description = "Lithops",
+	    description = S"Lithops",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 1.0,
@@ -939,7 +940,7 @@ minetest.register_node("livingdesert:succulent5", {
 	})
 
 minetest.register_node("livingdesert:cactus", {
-	    description = "Barrel Cactus",
+	    description = S"Barrel Cactus",
 	    drawtype = "plantlike",
 	    waving = 0,
 	    visual_scale = 2.0,
@@ -979,7 +980,7 @@ minetest.register_node("livingdesert:cactus", {
 	})
 
 minetest.register_node("livingdesert:cactus2", {
-	    description = "Peanut Cactus",
+	    description = S"Peanut Cactus",
 	    drawtype = "plantlike",
 	    waving = 0,
 	    visual_scale = 1.0,
@@ -1019,7 +1020,7 @@ minetest.register_node("livingdesert:cactus2", {
 	})
 
 minetest.register_node("livingdesert:cactus3", {
-	    description = "Spider Cactus",
+	    description = S"Spider Cactus",
 	    drawtype = "plantlike",
 	    waving = 0,
 	    visual_scale = 2.0,
@@ -1060,7 +1061,7 @@ minetest.register_node("livingdesert:cactus3", {
 	})
 
 minetest.register_node("livingdesert:cactus4", {
-	    description = "Small Barrel Cactus",
+	    description = S"Small Barrel Cactus",
 	    drawtype = "plantlike",
 	    waving = 0,
 	    visual_scale = 1.0,
@@ -1100,7 +1101,7 @@ minetest.register_node("livingdesert:cactus4", {
 	})
 
 minetest.register_node("livingdesert:cactus5", {
-	    description = "Small Spider Cactus",
+	    description = S"Small Spider Cactus",
 	    drawtype = "plantlike",
 	    waving = 0,
 	    visual_scale = 1.0,

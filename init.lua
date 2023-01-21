@@ -1,7 +1,7 @@
 --This creates the livingdesert object.
 livingdesert = {}
 
---This creates the naturalbiomes.settings object, and fills it with either the menu selected choices as defined in settingtypes.txt, or default values, (In this case, false).
+--This creates the livingdesert.settings object, and fills it with either the menu selected choices as defined in settingtypes.txt, or default values, (In this case, false).
 livingdesert.settings = {
 	clear_biomes			= minetest.settings:get_bool("livingdesert.clear_biomes") or false,
 	clear_decos			= minetest.settings:get_bool("livingdesert.clear_decos") or false,
@@ -34,6 +34,7 @@ local S = minetest.get_translator and minetest.get_translator("livingdesert") or
 dofile(path .. "desertplants.lua") -- 
 dofile(path .. "colddesert.lua") -- 
 dofile(path .. "yurts.lua") -- 
+dofile(path .. "dye.lua") -- 
 dofile(path .. "leafdecay.lua") -- 
 dofile(path .. "hunger.lua") -- 
 

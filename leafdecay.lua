@@ -1,4 +1,5 @@
 
+
 default.register_leafdecay({
 	trunks = {"livingdesert:date_palm_trunk"},
 	leaves = {"livingdesert:date_palm_leaves", "livingdesert:date_palm_fruits"},

@@ -1,3 +1,4 @@
+local S = minetest.get_translator("livingdesert")
 
 local modname = "livingdesert"
 local modpath = minetest.get_modpath(modname)
@@ -19,7 +20,7 @@ local mg_name = minetest.get_mapgen_setting("mg_name")
 -- ground nodes
 
 minetest.register_node("livingdesert:coldsteppe_ground", {
-	description = ("Cold Desert Ground"),
+	description = S("Cold Desert Ground"),
 	tiles = {"livingdesert_coldsteppe_ground.png", "default_sand.png",
 		{name = "default_sand.png^livingdesert_coldsteppe_ground_side.png",
 			tileable_vertical = false}},
@@ -31,7 +32,7 @@ minetest.register_node("livingdesert:coldsteppe_ground", {
 })
 
 minetest.register_node("livingdesert:coldsteppe_ground2", {
-	description = ("Cold Desert Ground"),
+	description = S("Cold Desert Ground"),
 	tiles = {"livingdesert_coldsteppe_ground2.png", "default_sand.png",
 		{name = "default_sand.png^livingdesert_coldsteppe_ground2_side.png",
 			tileable_vertical = false}},
@@ -43,7 +44,7 @@ minetest.register_node("livingdesert:coldsteppe_ground2", {
 })
 
 minetest.register_node("livingdesert:coldsteppe_ground3", {
-	description = ("Cold Desert Ground"),
+	description = S("Cold Desert Ground"),
 	tiles = {"livingdesert_coldsteppe_ground3.png", "default_sand.png",
 		{name = "default_sand.png^livingdesert_coldsteppe_ground3_side.png",
 			tileable_vertical = false}},
@@ -55,7 +56,7 @@ minetest.register_node("livingdesert:coldsteppe_ground3", {
 })
 
 minetest.register_node("livingdesert:coldsteppe_ground4", {
-	description = ("Cold Desert Ground"),
+	description = S("Cold Desert Ground"),
 	tiles = {"livingdesert_coldsteppe_ground4.png", "default_sand.png",
 		{name = "default_sand.png^livingdesert_coldsteppe_ground4_side.png",
 			tileable_vertical = false}},
@@ -147,7 +148,7 @@ minetest.register_node("livingdesert:coldsteppe_ground4", {
 	})
 
 minetest.register_node("livingdesert:coldsteppe_grass1", {
-	    description = "Coldsteppe Grass",
+	    description = S"Coldsteppe Grass",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 1.0,
@@ -178,7 +179,7 @@ minetest.register_node("livingdesert:coldsteppe_grass1", {
 	})
 
 minetest.register_node("livingdesert:coldsteppe_grass2", {
-	    description = "Coldsteppe Grass",
+	    description = S"Coldsteppe Grass",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 1.0,
@@ -209,7 +210,7 @@ minetest.register_node("livingdesert:coldsteppe_grass2", {
 	})
 
 minetest.register_node("livingdesert:coldsteppe_grass3", {
-	    description = "Coldsteppe Grass",
+	    description = S"Coldsteppe Grass",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 1.0,
@@ -240,7 +241,7 @@ minetest.register_node("livingdesert:coldsteppe_grass3", {
 	})
 
 minetest.register_node("livingdesert:coldsteppe_grass4", {
-	    description = "Coldsteppe Grass",
+	    description = S"Coldsteppe Grass",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 1.0,
@@ -271,7 +272,7 @@ minetest.register_node("livingdesert:coldsteppe_grass4", {
 	})
 
 minetest.register_node("livingdesert:coldsteppe_grass6", {
-	    description = "Coldsteppe Grass",
+	    description = S"Coldsteppe Grass",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 1.0,
@@ -310,7 +311,7 @@ minetest.register_node("livingdesert:coldsteppe_grass6", {
 	})
 
 minetest.register_node("livingdesert:saxaul_shrub", {
-	    description = "Coldsteppe Shrub",
+	    description = S"Coldsteppe Shrub",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 2.0,
@@ -351,7 +352,7 @@ minetest.register_node("livingdesert:saxaul_shrub", {
 	})
 
 minetest.register_node("livingdesert:saxaul_shrub2", {
-	    description = "Coldsteppe Shrub",
+	    description = S"Coldsteppe Shrub",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 2.0,
@@ -412,7 +413,7 @@ end
 
 -- datepalm trunk
 minetest.register_node("livingdesert:pine_trunk", {
-	description = ("Cold Desert Larch Trunk"),
+	description = S("Cold Desert Larch Trunk"),
 	tiles = {
 		"livingdesert_pine_trunk_top.png",
 		"livingdesert_pine_trunk_top.png",
@@ -425,7 +426,7 @@ minetest.register_node("livingdesert:pine_trunk", {
 })
 
 minetest.register_node("livingdesert:pine_leaves", {
-  description = ("Cold Desert Larch Leaves"),
+  description = S("Cold Desert Larch Leaves"),
   drawtype = "allfaces_optional",
   waving = 1,
   visual_scale = 1.0,
@@ -433,7 +434,7 @@ minetest.register_node("livingdesert:pine_leaves", {
   special_tiles = {"livingdesert_pine_leaves.png"},
   paramtype = "light",
   is_ground_content = false,
-  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1, winleafdecay = 3},
   drop = {
     max_items = 1,
     items = {
@@ -455,7 +456,7 @@ minetest.register_node("livingdesert:pine_leaves", {
 })
 
 minetest.register_node("livingdesert:pine_leaves2", {
-  description = ("Cold Desert Larch Leaves"),
+  description = S("Cold Desert Larch Leaves"),
   drawtype = "allfaces_optional",
   waving = 1,
   visual_scale = 1.0,
@@ -463,7 +464,7 @@ minetest.register_node("livingdesert:pine_leaves2", {
   special_tiles = {"livingdesert_pine_leaves2.png"},
   paramtype = "light",
   is_ground_content = false,
-  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1, winleafdecay = 3},
   drop = {
     max_items = 1,
     items = {
@@ -485,7 +486,7 @@ minetest.register_node("livingdesert:pine_leaves2", {
 })
 
 minetest.register_node("livingdesert:pine_leaves3", {
-  description = ("Cold Desert Larch Leaves"),
+  description = S("Cold Desert Larch Leaves"),
   drawtype = "allfaces_optional",
   waving = 1,
   visual_scale = 1.0,
@@ -493,7 +494,7 @@ minetest.register_node("livingdesert:pine_leaves3", {
   special_tiles = {"livingdesert_pine_leaves3.png"},
   paramtype = "light",
   is_ground_content = false,
-  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1, winleafdecay = 3},
   drop = {
     max_items = 1,
     items = {
@@ -515,7 +516,7 @@ minetest.register_node("livingdesert:pine_leaves3", {
 })
 
 minetest.register_node("livingdesert:pine_sapling", {
-  description = ("Cold Desert Larch Sapling"),
+  description = S("Cold Desert Larch Sapling"),
   drawtype = "plantlike",
   tiles = {"livingdesert_pine_sapling.png"},
   inventory_image = "livingdesert_pine_sapling.png",
@@ -550,7 +551,7 @@ minetest.register_node("livingdesert:pine_sapling", {
 })
 
 minetest.register_node("livingdesert:pine_sapling2", {
-  description = ("Cold Desert Larch Sapling"),
+  description = S("Cold Desert Larch Sapling"),
   drawtype = "plantlike",
   tiles = {"livingdesert_pine_sapling2.png"},
   inventory_image = "livingdesert_pine_sapling2.png",
@@ -585,7 +586,7 @@ minetest.register_node("livingdesert:pine_sapling2", {
 })
 
 minetest.register_node("livingdesert:pine_sapling3", {
-  description = ("Cold Desert Larch Sapling"),
+  description = S("Cold Desert Larch Sapling"),
   drawtype = "plantlike",
   tiles = {"livingdesert_pine_sapling3.png"},
   inventory_image = "livingdesert_pine_sapling3.png",
@@ -621,7 +622,7 @@ minetest.register_node("livingdesert:pine_sapling3", {
 
 -- pine wood
 minetest.register_node("livingdesert:pine_wood", {
-	description = ("Cold Desert Larch Wood"),
+	description = S("Cold Desert Larch Wood"),
 	tiles = {"livingdesert_pine_wood.png"},
 	is_ground_content = false,
 	groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
@@ -638,8 +639,8 @@ minetest.register_craft({
       "livingdesert:pine_wood",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingdesert_pine_wood.png"},
-      ("Cold Desert Larch Stair"),
-      ("Cold Desert Larch Slab"),
+      S("Cold Desert Larch Stair"),
+      S("Cold Desert Larch Slab"),
       default.node_sound_wood_defaults()
     )
 
@@ -648,15 +649,15 @@ minetest.register_craft({
       "livingdesert:pine_trunk",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingdesert_pine_trunk_top.png", "livingdesert_pine_trunk_top.png", "livingdesert_pine_trunk.png"},
-      ("Cold Desert Larch Trunk Stair"),
-      ("Cold Desert Larch Trunk Slab"),
+      S("Cold Desert Larch Trunk Stair"),
+      S("Cold Desert Larch Trunk Slab"),
       default.node_sound_wood_defaults()
     )
 
   doors.register_fencegate(
     "livingdesert:gate_pine_wood",
     {
-      description = ("Cold Desert Larch Wood Fence Gate"),
+      description = S("Cold Desert Larch Wood Fence Gate"),
       texture = "livingdesert_pine_wood.png",
       material = "livingdesert:pine_wood",
       groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
@@ -668,7 +669,7 @@ minetest.register_craft({
 default.register_fence(
   "livingdesert:fence_pine_wood",
   {
-    description = ("Cold Desert Larch Fence"),
+    description = S("Cold Desert Larch Fence"),
     texture = "livingdesert_pine_fence_wood.png",
     inventory_image = "default_fence_overlay.png^livingdesert_pine_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
     wield_image = "default_fence_overlay.png^livingdesert_pine_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
@@ -681,7 +682,7 @@ default.register_fence(
 default.register_fence_rail(
   "livingdesert:fence_rail_pine_wood",
   {
-    description = ("Cold Desert Larch Fence Rail"),
+    description = S("Cold Desert Larch Fence Rail"),
     texture = "livingdesert_pine_fence_wood.png",
     inventory_image = "default_fence_rail_overlay.png^livingdesert_pine_wood.png^" ..
       "default_fence_rail_overlay.png^[makealpha:255,126,126",
@@ -885,13 +886,13 @@ local function grow_new_saxaul_tree(pos)
 		return
 	end
 minetest.remove_node(pos)
-	minetest.place_schematic({x = pos.x - 3, y = pos.y - 0, z = pos.z - 3}, modpath.."/schematics/livingdesert_saxaul.mts", "0", nil, false)
+	minetest.place_schematic({x = pos.x - 2, y = pos.y - 0, z = pos.z - 2}, modpath.."/schematics/livingdesert_saxaul.mts", "0", nil, false)
 
 end
 
 -- saxaul trunk
 minetest.register_node("livingdesert:saxaul_trunk", {
-	description = ("Saxaul Tree Trunk"),
+	description = S("Saxaul Tree Trunk"),
 	tiles = {
 		"livingdesert_saxaul_trunk.png",
 		"livingdesert_saxaul_trunk.png",
@@ -904,7 +905,7 @@ minetest.register_node("livingdesert:saxaul_trunk", {
 })
 
 minetest.register_node("livingdesert:saxaul_leaves", {
-  description = ("Saxaul Tree Leaves"),
+  description = S("Saxaul Tree Leaves"),
   drawtype = "allfaces_optional",
   waving = 1,
   visual_scale = 1.0,
@@ -934,7 +935,7 @@ minetest.register_node("livingdesert:saxaul_leaves", {
 })
 
 minetest.register_node("livingdesert:saxaul_sapling", {
-  description = ("Saxaul Tree Sapling"),
+  description = S("Saxaul Tree Sapling"),
   drawtype = "plantlike",
   tiles = {"livingdesert_saxaul_sapling.png"},
   inventory_image = "livingdesert_saxaul_sapling.png",
@@ -970,7 +971,7 @@ minetest.register_node("livingdesert:saxaul_sapling", {
 
 -- saxaul wood
 minetest.register_node("livingdesert:saxaul_wood", {
-	description = ("Saxaul Tree Wood"),
+	description = S("Saxaul Tree Wood"),
 	tiles = {"livingdesert_saxaul_wood.png"},
 	is_ground_content = false,
 	groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
@@ -987,8 +988,8 @@ minetest.register_craft({
       "livingdesert:saxaul_wood",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingdesert_saxaul_wood.png"},
-      ("Saxaul Tree Stair"),
-      ("Saxaul Tree Slab"),
+      S("Saxaul Tree Stair"),
+     S("Saxaul Tree Slab"),
       default.node_sound_wood_defaults()
     )
 
@@ -997,15 +998,15 @@ minetest.register_craft({
       "livingdesert:saxaul_trunk",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingdesert_saxaul_trunk.png", "livingdesert_saxaul_trunk.png", "livingdesert_saxaul_trunk.png"},
-      ("Saxaul Tree Trunk Stair"),
-      ("Saxaul Tree Trunk Slab"),
+      S("Saxaul Tree Trunk Stair"),
+      S("Saxaul Tree Trunk Slab"),
       default.node_sound_wood_defaults()
     )
 
   doors.register_fencegate(
     "livingdesert:gate_saxaul_wood",
     {
-      description = ("Saxaul Tree Wood Fence Gate"),
+      description = S("Saxaul Tree Wood Fence Gate"),
       texture = "livingdesert_saxaul_wood.png",
       material = "livingdesert:saxaul_wood",
       groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
@@ -1017,7 +1018,7 @@ minetest.register_craft({
 default.register_fence(
   "livingdesert:fence_saxaul_wood",
   {
-    description = ("Saxaul Tree Fence"),
+    description = S("Saxaul Tree Fence"),
     texture = "livingdesert_saxaul_fence_wood.png",
     inventory_image = "default_fence_overlay.png^livingdesert_saxaul_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
     wield_image = "default_fence_overlay.png^livingdesert_saxaul_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
@@ -1030,7 +1031,7 @@ default.register_fence(
 default.register_fence_rail(
   "livingdesert:fence_rail_saxaul_wood",
   {
-    description = ("Saxaul Tree Fence Rail"),
+    description = S("Saxaul Tree Fence Rail"),
     texture = "livingdesert_saxaul_fence_wood.png",
     inventory_image = "default_fence_rail_overlay.png^livingdesert_saxaul_wood.png^" ..
       "default_fence_rail_overlay.png^[makealpha:255,126,126",
@@ -1182,7 +1183,7 @@ minetest.register_decoration({
 	})
 
 minetest.register_node("livingdesert:deadshrub", {
-	    description = "Dead Shrub",
+	    description = S"Dead Shrub",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 2.0,
@@ -1203,7 +1204,7 @@ minetest.register_node("livingdesert:deadshrub", {
 })
 
 minetest.register_node("livingdesert:flower", {
-	    description = "Crocus Flower",
+	    description = S"Crocus Flower",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 1.0,
