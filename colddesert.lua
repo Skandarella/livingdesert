@@ -1193,7 +1193,6 @@ minetest.register_node("livingdesert:deadshrub", {
 	  paramtype = "light",
   sunlight_propagates = true,
   walkable = false,
-  on_timer = grow_new_date_palm_tree,
   selection_box = {
     type = "fixed",
     fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 7 / 16, 4 / 16}
