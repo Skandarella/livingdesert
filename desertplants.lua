@@ -9,6 +9,7 @@ local mg_name = minetest.get_mapgen_setting("mg_name")
 
 -- New date palm tree
 
+
 local function grow_new_date_palm_tree(pos)
 	if not default.can_grow(pos) then
 		-- try a bit later again
@@ -19,6 +20,13 @@ minetest.remove_node(pos)
 	minetest.place_schematic({x = pos.x - 1, y = pos.y - 0, z = pos.z - 1}, modpath.."/schematics/livingdesert_date_palm.mts", "0", nil, false)
 
 end
+
+if minetest.get_modpath("bonemeal") then
+bonemeal:add_sapling({
+	{"livingdesert:date_palm_sapling", grow_new_date_palm_tree, "soil"},
+})
+end
+
 
 -- datepalm trunk
 minetest.register_node("livingdesert:date_palm_trunk", {
@@ -260,6 +268,12 @@ minetest.remove_node(pos)
 
 end
 
+if minetest.get_modpath("bonemeal") then
+bonemeal:add_sapling({
+	{"livingdesert:euphorbia_sapling", grow_new_euphorbia_tree, "soil"},
+})
+end
+
 -- euphorbia trunk
 minetest.register_node("livingdesert:euphorbia_trunk", {
 	description = S("Euphorbia Trunk"),
@@ -421,6 +435,12 @@ minetest.remove_node(pos)
 
 end
 
+if minetest.get_modpath("bonemeal") then
+bonemeal:add_sapling({
+	{"livingdesert:figcactus_sapling", grow_new_figcactus_tree, "soil"},
+})
+end
+
 -- figcactus trunk
 minetest.register_node("livingdesert:figcactus_trunk", {
 	description = S("Figcactus Trunk"),
@@ -430,7 +450,6 @@ minetest.register_node("livingdesert:figcactus_trunk", {
 		"livingdesert_figcactus.png"
 	},
 	groups = {tree = 1, coppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
-	sounds = mod_def and default.node_sound_leaves_defaults(),
 	paramtype2 = "facedir",
 	on_place = minetest.rotate_node,
 })
@@ -1119,3 +1138,10 @@ minetest.register_node("livingdesert:cactus5", {
 		    fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 0.0, 4 / 16},
 	    },
     })
+
+if minetest.get_modpath("bonemeal") then
+	bonemeal:add_deco({
+		{"default:desert_sand", {"livingdesert:cactus5", "livingdesert:cactus4", "livingdesert:cactus3", "livingdesert:cactus2", "livingdesert:cactus", "livingdesert:succulent5", "livingdesert:succulent4", "livingdesert:succulent3", "livingdesert:succulent2", "livingdesert:succulent", "livingdesert:yucca"}, {}}
+	})
+end
+

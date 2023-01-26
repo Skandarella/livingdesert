@@ -389,6 +389,13 @@ minetest.remove_node(pos)
 
 end
 
+if minetest.get_modpath("bonemeal") then
+bonemeal:add_sapling({
+	{"livingdesert:pine_sapling", grow_new_pine_tree, "soil"},
+})
+end
+
+
 local function grow_new_pine2_tree(pos)
 	if not default.can_grow(pos) then
 		-- try a bit later again
@@ -400,6 +407,14 @@ minetest.remove_node(pos)
 
 end
 
+
+if minetest.get_modpath("bonemeal") then
+bonemeal:add_sapling({
+	{"livingdesert:pine_sapling2", grow_new_pine2_tree, "soil"},
+})
+end
+
+
 local function grow_new_pine3_tree(pos)
 	if not default.can_grow(pos) then
 		-- try a bit later again
@@ -409,6 +424,13 @@ local function grow_new_pine3_tree(pos)
 minetest.remove_node(pos)
 	minetest.place_schematic({x = pos.x - 3, y = pos.y - 0, z = pos.z - 3}, modpath.."/schematics/livingdesert_pine3.mts", "0", nil, false)
 
+end
+
+
+if minetest.get_modpath("bonemeal") then
+bonemeal:add_sapling({
+	{"livingdesert:pine_sapling3", grow_new_pine3_tree, "soil"},
+})
 end
 
 -- datepalm trunk
@@ -890,6 +912,12 @@ minetest.remove_node(pos)
 
 end
 
+if minetest.get_modpath("bonemeal") then
+bonemeal:add_sapling({
+	{"livingdesert:saxaul_sapling", grow_new_saxaul_tree, "soil"},
+})
+end
+
 -- saxaul trunk
 minetest.register_node("livingdesert:saxaul_trunk", {
 	description = S("Saxaul Tree Trunk"),
@@ -1193,7 +1221,6 @@ minetest.register_node("livingdesert:deadshrub", {
 	  paramtype = "light",
   sunlight_propagates = true,
   walkable = false,
-  on_timer = grow_new_date_palm_tree,
   selection_box = {
     type = "fixed",
     fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 7 / 16, 4 / 16}
@@ -1241,3 +1268,22 @@ minetest.register_node("livingdesert:flower", {
 		y_min = 0,
 		decoration = "livingdesert:flower",
 	})
+
+if minetest.get_modpath("bonemeal") then
+	bonemeal:add_deco({
+		{"livingdesert:coldsteppe_ground", {"livingdesert:coldsteppe_grass1", "livingdesert:coldsteppe_grass2", "livingdesert:coldsteppe_grass3", "livingdesert:coldsteppe_grass4", "livingdesert:coldsteppe_grass6", "livingdesert:saxaul_shrub", "livingdesert:saxaul_shrub2", "livingdesert:flower", "livingdesert:deadshrub"}, {}}
+	})
+end
+
+if minetest.get_modpath("bonemeal") then
+	bonemeal:add_deco({
+		{"livingdesert:coldsteppe_ground2", {"livingdesert:coldsteppe_grass1", "livingdesert:coldsteppe_grass2", "livingdesert:coldsteppe_grass3", "livingdesert:coldsteppe_grass4", "livingdesert:coldsteppe_grass6", "livingdesert:flower"}, {}}
+	})
+end
+
+if minetest.get_modpath("bonemeal") then
+	bonemeal:add_deco({
+		{"livingdesert:coldsteppe_ground2", {"livingdesert:coldsteppe_grass1", "livingdesert:coldsteppe_grass2", "livingdesert:coldsteppe_grass3", "livingdesert:coldsteppe_grass4", "livingdesert:coldsteppe_grass6", "livingdesert:flower"}, {}}
+	})
+end
+
