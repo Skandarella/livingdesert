@@ -15,7 +15,7 @@ local function grow_new_date_palm_tree(pos)
 		minetest.get_node_timer(pos):start(math.random(240, 600))
 		return
 	end
-minetest.remove_node(pos)
+	minetest.remove_node(pos)
 	minetest.place_schematic({x = pos.x - 1, y = pos.y - 0, z = pos.z - 1}, modpath.."/schematics/livingdesert_date_palm.mts", "0", nil, false)
 
 end
@@ -430,7 +430,7 @@ minetest.register_node("livingdesert:figcactus_trunk", {
 		"livingdesert_figcactus.png"
 	},
 	groups = {tree = 1, coppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
-	sounds = mod_def and default.node_sound_leaves_defaults(),
+	sounds = default.node_sound_leaves_defaults(),
 	paramtype2 = "facedir",
 	on_place = minetest.rotate_node,
 })
